@@ -39,4 +39,20 @@ let fac n = if n==1 then 1 else (n*fac(n-1))
 map (\x->(fac x)) [1..10] -- [1,2,6,24,120,720,5040,40320,362880,3628800]
 
 
+
+
+
+
+
+-- Compreensão de Lista
+
+{- Uma lista pode ser especificada
+   pela definição de eus elementos.
+   A compreensão de listas é feita
+   com um construtor de listas que
+   utiliza conceitos  e notações
+   da teoria dos conjuntos.
+-}
+
+[ x | x <- [1..4], y <- [x..5], (x+y) `mod` 2 == 0 ] -- [1,1,1,2,2,3,3,4]
 ```
