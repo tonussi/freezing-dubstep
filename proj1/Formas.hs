@@ -9,15 +9,15 @@ module Formas
 , vertice
 , quadrado
 , circulo
-, dstentre
+, distentre
 , area
 ) where
 
 data Forma = areaRetangulo lado lado
-	   | areaElipse raio raio
-	   | areaTriangRet lado lado
-	   | areaPoligono [vertice]
-     deriving Show
+	   			 | areaElipse raio raio
+	   			 | areaTriangRet lado lado
+	   			 | areaPoligono [vertice]
+     			 deriving Show
 
 type raio = Float
 type lado = Float
@@ -27,14 +27,14 @@ quadrado s = areaRetangulo s s
 circulo r = areaElipse r r
 
 triArea :: vertice -> vertice -> vertice -> Float
-triArea v1 v2 v3 = let a = dstentre v1 v2
-		       b = dstentre v1 v2
-		       c = dstentre v1 v2
-		       s = dstentre v1 v2
-		   in sqrt (s * (s - a) * (s - b) * (s - c))
+triArea v1 v2 v3 = let a = distentre v1 v2
+		                   b = distentre v1 v2
+		                   c = distentre v1 v2
+		                   s = distentre v1 v2
+		    in sqrt (s * (s - a) * (s - b) * (s - c))
 
-dstentre :: vertice -> vertice -> Float
-dstentre (x1, y1) (x2, y2) = sqrt ((x1 - x2) ^ 2 + (y1 - y2) ^ 2)
+distentre :: vertice -> vertice -> Float
+distentre (x1, y1) (x2, y2) = sqrt ((x1 - x2) ^ 2 + (y1 - y2) ^ 2)
 
 area :: Forma -> Float
 area (areaRetangulo s1 s2)  = s1 * s2
