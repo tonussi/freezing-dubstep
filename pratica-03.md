@@ -38,21 +38,42 @@ map f [1..10] -- [1,4,9,16,25,36,49,64,81,100]
 let fac n = if n==1 then 1 else (n*fac(n-1))
 map (\x->(fac x)) [1..10] -- [1,2,6,24,120,720,5040,40320,362880,3628800]
 
+let p x y = if x `mod` y == 0 then True else False
 
+map (\x -> if p x then f x else x) xs
 
+let remove x list = [y | y <- list, not (p x)]
 
-
-
-
--- Compreensão de Lista
-
-{- Uma lista pode ser especificada
-   pela definição de eus elementos.
-   A compreensão de listas é feita
-   com um construtor de listas que
-   utiliza conceitos  e notações
-   da teoria dos conjuntos.
+{- Criei um p x y que me devolve verdadeiro
+   se x mod y == 0 e falso caso contrario
+   com isso eu posso mapeador numa lista
+   o que eu quiser que seja eliminado
+   segundo o modulo que eu passar para
+   esse mapeamento
 -}
 
-[ x | x <- [1..4], y <- [x..5], (x+y) `mod` 2 == 0 ] -- [1,1,1,2,2,3,3,4]
+let p x y = if x `mod` y == 0 then True else False
+let remove y list = [x | x <- list, not (p x y)]
+
+Prelude> remove 4 [4..19]
+[5,6,7,9,10,11,13,14,15,17,18,19]
+```
+# Compreensão de Lista
+
+Uma lista pode ser especificada
+pela definição de eus elementos.
+A compreensão de listas é feita
+com um construtor de listas que
+utiliza conceitos  e notações
+da teoria dos conjuntos.
+
+```prolog
+{-
+-}
+
+let hobbit = [ x | x <- [1..4], y <- [x..5], (x+y) `mod` 2 == 0 ] -- [1,1,1,2,2,3,3,4]
+
+Prelude> :t hobbit
+hobbit :: [Integer]
+
 ```
