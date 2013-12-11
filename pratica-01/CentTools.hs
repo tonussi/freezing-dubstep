@@ -34,13 +34,22 @@ mulFreq x y = map (x*) y
 
 mulFreq x y = map (x*) y
 
-mergeList [] _ = []
+{- mergeList [] _ = []
 mergeList _ [] = []
-mergeList x ( y : ys ) = zipWith (*) x y : mergeList x y s
+mergeList x ( y : ys ) = zipWith (*) x y : mergeList x y s -}
+
+mergeList _ [] = []
+mergeList [] _ = []
+mergeList (x:xs) (y:ys) = (x,y):mergeList xs ys
 
 _ConvDat x = head (fst(unzip(readFloat x)))
 
-argNum x = head(fst(unzip(readDec x)))
+argNum x = head . fst . unzip . readDec x
+
+{- point free
+   let fn = f . g . h
+   let fn x = f (g (h x))
+-}
 
 sliceList _ [] = []
 sliceList n x = fst ( splitAt n x ) :\
