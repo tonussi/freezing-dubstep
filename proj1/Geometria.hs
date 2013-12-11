@@ -20,96 +20,152 @@ module Geometria
 , volumeEsferoideProlato
 ) where
 
-volumeEsfera :: Float -> Float
+
+
+volumeEsfera :: Floating a => a -> a
 volumeEsfera raio = (4.0 / 3.0) * pi * (raio ^ 3)
 
-areaEsfera :: Float -> Float
+
+
+areaEsfera :: Floating a => a -> a
 areaEsfera raio = 4 * pi * (raio ^ 2)
 
-volumeCubo :: Float -> Float
+
+
+volumeCubo :: Num a => a -> a
 volumeCubo lado = volumeCuboide lado lado lado
 
-areaCubo :: Float -> Float
+
+
+areaCubo :: Num a => a -> a
 areaCubo lado = areaCuboide lado lado lado
 
-volumeCuboide :: Float -> Float -> Float -> Float
+
+
+volumeCuboide :: Num a => a -> a -> a -> a
 volumeCuboide a b c = areaRetangulo a b * c
 
-areaCuboide :: Float -> Float -> Float -> Float
+
+
+areaCuboide :: Num a => a -> a -> a -> a
 areaCuboide a b c = areaRetangulo a b * 2 + areaRetangulo a c * 2 + areaRetangulo c b * 2
 
-areaRetangulo :: Float -> Float -> Float
+
+
+areaRetangulo :: Num a => a -> a -> a
 areaRetangulo a b = a * b
 
-areaLateralCilindro :: Float -> Float -> Float
+
+
+areaLateralCilindro :: Floating a => a -> a -> a
 areaLateralCilindro raio altura = 2 * pi * raio * altura
 
-areaTotalCilindro :: Float -> Float -> Float
+
+
+areaTotalCilindro :: Floating a => a -> a -> a
 areaTotalCilindro raio altura = areaLateralCilindro raio altura + 2 * pi * (raio ^ 2)
 
-volumeCilindro :: Float -> Float -> Float
+
+
+volumeCilindro :: Floating a => a -> a -> a
 volumeCilindro raio altura = pi * (raio ^ 2) * altura
 
-areaLateralCone :: Float -> Float -> Float
+
+
+areaLateralCone :: Floating a => a -> a -> a
 areaLateralCone raio altura = pi * raio * sqrt (raio ^ 2 + altura ^ 2)
 
-calculoSqrt :: Float -> Float -> Float
-calculoSqrt raio altura = (sqrt (raio ^ 2 + altura ^ 2) + raio)
 
-areaTotalCone :: Float -> Float -> Float
-areaTotalCone raio altura = pi * raio * (calculoSqrt (raio altura))
 
-volumeCone :: Float -> Float -> Float
+calculoSqrt :: Floating a => a -> a -> a
+calculoSqrt raio altura = sqrt (raio ^ 2 + altura ^ 2) + raio
+
+
+
+areaTotalCone :: Floating a => a -> a -> a
+areaTotalCone raio altura = pi * raio * (calculoSqrt raio altura)
+
+
+
+volumeCone :: Floating a => a -> a -> a
 volumeCone raio altura = (1.0 / 3.0) * pi * (raio ^ 2) * altura
 
-areaLateralTroncoCone :: Float -> Float -> Float
+
+
+areaLateralTroncoCone :: Floating a => a -> a -> a
 areaLateralTroncoCone raio altura = pi * raio * sqrt (raio ^ 2 + altura ^ 2)
 
-areaTotalTroncoCone :: Float -> Float -> Float
-areaTotalTroncoCone raio altura = pi * raio * (calculoSqrt (raio altura))
 
-volumeTroncoCone :: Float -> Float -> Float
-volumeTroncoCone raio1 raio2 altura = (1.0 / 3.0) * pi * altura (raio1 ^ 2 + raio2 ^ 2 + raio1 * raio2)
+
+areaTotalTroncoCone :: Floating a => a -> a -> a
+areaTotalTroncoCone raio altura = pi * raio * (calculoSqrt raio altura)
+
+
+
+volumeTroncoCone :: Floating a => a -> a -> a -> a
+volumeTroncoCone raio1 raio2 altura = (1.0 / 3.0) * pi * altura * (raio1 ^ 2 + raio2 ^ 2 + raio1 * raio2)
+
+
 
 {- Como calcular area de superf esferoidal
    https://en.wikipedia.org/wiki/spheroid
 -}
 
-ecentricidadeOblata :: Float -> Float -> Float
+
+
+ecentricidadeOblata :: Floating a => a -> a -> a
 ecentricidadeOblata a b = (sqrt (a ^ 2 - b ^ 2)) / a
 
-circunf :: Float -> Float
+
+
+circunf :: Floating a => a -> a
 circunf a = 2 * pi * a ^ 2
 
-areaEsferoideOblato :: Float -> Float -> Float
-areaEsferoideOblato a b =
-  if b < a
-  then (circunf a) * (1 + (((1 - ((ecentricidadeOblata a b) ^ 2))  / ecentricidadeOblata a b) * atanh (ecentricidadeOblata a b)))
-  else if b == a
-  then areaEsfera a
-  else 0
+
+
+areaEsferoideOblato :: (Floating a, Ord a) => a -> a -> a
+areaEsferoideOblato a b = if b < a
+
+
+                          then (circunf a) * (1 + (((1 - ((ecentricidadeOblata a b) ^ 2))  / ecentricidadeOblata a b) * atanh (ecentricidadeOblata a b)))
+                          else if b == a
+                          then areaEsfera a
+                          else 0
+
+
 
 {- se for b > a nos esferoides oblatos
    nao da para calcular retorna 0
 -}
 
-volumeEsferoideOblato :: Float -> Float -> Float
+
+
+volumeEsferoideOblato :: Floating a => a -> a -> a
 volumeEsferoideOblato a b = (4.0 / 3.0) * pi * a ^ 2 * b
 
-ecentricidadeProlata :: Float -> Float -> Float
+
+
+ecentricidadeProlata :: Floating a => a -> a -> a
 ecentricidadeProlata a b = (sqrt (b ^ 2 - a ^ 2)) / b
 
-areaEsferoideProlato :: Float -> Float -> Float
-areaEsferoideProlato a b =
-  if b > a
-  then (circunf a) * (1 + ((b / a * (ecentricidadeProlata a b)) * (asin (ecentricidadeProlata a b))))
-  else if b == a
-  then areaEsfera a
-  else 0
+
+
+areaEsferoideProlato :: (Floating a, Ord a) => a -> a -> a
+areaEsferoideProlato a b = if b > a
+
+
+                           then (circunf a) * (1 + ((b / a * (ecentricidadeProlata a b)) * (asin (ecentricidadeProlata a b))))
+                           else if b == a
+                           then areaEsfera a
+                           else 0
+
+
 
 {- se for b < a nos esferoides prolatos
    nao da para calcular retorna 0
 -}
 
-volumeEsferoideProlato :: Float -> Float -> Float
+
+
+volumeEsferoideProlato :: Floating a => a -> a -> a
 volumeEsferoideProlato a b = (4.0 / 3.0) * pi * a * b ^ 2
