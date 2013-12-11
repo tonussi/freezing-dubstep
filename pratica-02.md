@@ -2,7 +2,14 @@ __Lab__: Prática 2
 
 __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
-[TOC]
+<div class="toc">
+<ul>
+<li><a href="#linguagem-de-programacao-c">Linguagem de Programação C</a></li>
+<li><a href="#signed-e-unsigned-integers-em-c">Signed e Unsigned Integers em C</a></li>
+<li><a href="#sizeof">Sizeof</a></li>
+<li><a href="#double-pi-com-o2">Double pi com -O2</a></li>
+</ul>
+</div>
 
 ## Linguagem de Programação C
 
