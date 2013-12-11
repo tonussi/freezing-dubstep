@@ -2,7 +2,13 @@ __Lab__: Prática 1
 
 __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
-[TOC]
+<div class="toc">
+<ul>
+<li><a href="#comandos-unix">Comandos Unix</a></li>
+<li><a href="#semantica-e-sintaxe">Semântica e Sintaxe</a></li>
+<li><a href="#os-arquivos-gram-scan-y">Os Arquivos gram, scan &amp; y</a></li>
+</ul>
+</div>
 
 # Comandos Unix
 
