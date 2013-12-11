@@ -1,11 +1,12 @@
 module CentTools
-( transp
+( transpose
 , multFreq
 , spectFreq
 , mergeList
 , _ConvDat
 , argNum
 , sliceList
+, transposicao
 ) where
 
 
@@ -34,9 +35,10 @@ mulFreq x y = map (x*) y
 
 mulFreq x y = map (x*) y
 
-{- mergeList [] _ = []
-mergeList _ [] = []
-mergeList x ( y : ys ) = zipWith (*) x y : mergeList x y s -}
+{- mergelist antigo
+   mergeList [] _ = []
+   mergeList _ [] = []
+   mergeList x ( y : ys ) = zipWith (*) x y : mergeList x y s -}
 
 mergeList _ [] = []
 mergeList [] _ = []
