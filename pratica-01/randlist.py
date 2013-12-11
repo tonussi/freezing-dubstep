@@ -3,7 +3,7 @@
 import random
 
 def main():
-    rl = RandList(300, 1000)
+    rl = RandList(1, 2000)
     rl.gen_random_list()
     rl.print_block_list()
 
@@ -21,8 +21,8 @@ class RandList(object):
 
     def print_block_list(self):
         print "[",
-        for i in range(15):
-            for j in range(15):
+        for i in range(25):
+            for j in range(25):
                 print "%3d," % self.populacao[i*15+j],
         print "]"
 
