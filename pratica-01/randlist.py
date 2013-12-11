@@ -3,10 +3,9 @@
 import random
 
 def main():
-    rl = RandList(500, 1000)
+    rl = RandList(300, 1000)
     rl.gen_random_list()
     rl.print_block_list()
-    print "\n\nPronto!"
 
 class RandList(object):
 
@@ -24,8 +23,9 @@ class RandList(object):
         print "[",
         for i in range(15):
             for j in range(15):
-                print "%3d," % self.populacao[i*7+j],
+                print "%3d," % self.populacao[i*15+j],
         print "]"
+
 
 if __name__ == "__main__":
     main()
