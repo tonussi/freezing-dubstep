@@ -2,7 +2,12 @@ __Lab__: Prática 3
 
 __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
-[TOC]
+<div class="toc">
+<ul>
+<li><a href="#calculo-lambda-em-haskell">Cálculo Lambda em Haskell</a></li>
+<li><a href="#compreensao-de-lista">Compreensão de Lista</a></li>
+</ul>
+</div>
 
 # Cálculo Lambda em Haskell
 
