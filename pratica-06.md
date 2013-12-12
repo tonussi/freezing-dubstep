@@ -9,15 +9,6 @@ __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 Objetivo desse lab 6 é aprender classes em Haskell.
 
 ```haskell
--- module Mixfunc
--- ( (+++)
--- , (***)
--- ) where
-
--- Num a =>
-
--- (***) :: a -> a -> a
-
 class Mixfunc a where
   (+++) :: a -> a -> a
   (***) :: Num a => a -> a -> a
@@ -30,9 +21,7 @@ instance Mixfunc Double where
 instance Mixfunc Integer where
   x +++ y = 10 * x + y
 
-
 {- Testes Unitários -}
-
 
 -- [1 of 1] Compiling Main ( Mixfunc.hs, interpreted )
 -- Ok, modules loaded: Main.
