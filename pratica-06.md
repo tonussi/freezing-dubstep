@@ -56,7 +56,7 @@ Prelude> 3 +++ 4 == 10 * 3 + 4 -- True
 
 # Classes e Tipos (Exercícios Resolvidos)
 
-__Exercício 1__: Ache os tipos das funções abaixo.
+__Exercício 1__:
 
 ```haskell
 increm :: Integer -> Integer
@@ -76,7 +76,7 @@ rotaciona :: [a] -> [a]
 rotaciona [] = error "EmptyListException"
 rotaciona (x:xs) = xs ++ [x]
 ```
-__Exercício 2__: Dado o móodulo abaixo, ache o tipo da função triads.
+__Exercício 2__:
 
 ```haskell
 module Pitagoras
