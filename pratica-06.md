@@ -2,7 +2,14 @@ __Lab__: Prática 6
 
 __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
-[TOC]
+<div class="toc">
+<ul>
+<li><a href="#implementacao-e-teste-da-classe-mixfunc">Implementação e Teste da Classe MixFunc</a></li>
+<li><a href="#comparacao-com-outras-linguagens">Comparação com outras linguagens</a></li>
+<li><a href="#classes-e-tipos-exercicios-resolvidos">Classes e Tipos (Exercícios Resolvidos)</a></li>
+<li><a href="#referencias">Referências</a></li>
+</ul>
+</div>
 
 # Implementação e Teste da Classe MixFunc
 
@@ -49,6 +56,8 @@ Prelude> 3 +++ 4 == 10 * 3 + 4 -- True
 
 # Classes e Tipos (Exercícios Resolvidos)
 
+__Exercício 1__: Ache os tipos das funções abaixo.
+
 ```haskell
 increm :: Integer -> Integer
 increm = \x -> x + 1
@@ -66,6 +75,26 @@ ultimo (_:xs) = ultimo xs
 rotaciona :: [a] -> [a]
 rotaciona [] = error "EmptyListException"
 rotaciona (x:xs) = xs ++ [x]
+```
+__Exercício 2__: Dado o móodulo abaixo, ache o tipo da função triads.
+
+```haskell
+module Pitagoras
+( triads
+) where
+
+triads :: (Enum t, Eq t, Num t) => t -> [(t, t, t)]
+triads n = [(a, b, c) |
+                      a <- [1..n] ,
+                      b <- [1..n] ,
+                      c <- [1..n] ,
+                      a ^ 2 + b ^ 2 == c ^ 2]
+
+
+-- [1 of 1] Compiling Pitagoras ( Pitagoras.hs, interpreted )
+-- Ok, modules loaded: Pitagoras.
+-- *Pitagoras> :browse Pitagoras
+-- triads :: (Enum t, Eq t, Num t) => t -> [(t, t, t)]
 ```
 
 # Referências
