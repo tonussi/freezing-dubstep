@@ -4,15 +4,24 @@
 
 float soluc(float, float);
 
-int main() {
-  float a, b = 5, c = 8.0;
-  a = soluc(b, c)
-  print("%f\n", a);
+int main()
+{
+
+  float b = 5.0;
+  float c = 8.0;
+  float a = soluc(b, c);
+
+  printf("%f\n", a);
+
   exit(0);
+
 }
 
-float soluc(float x, float y) {
+float soluc(float x, float y)
+{
+
   float r;
-  r = sqrt(x * x * x * y * y);
+  r = sqrt(x * x + y * y);
   return r;
+
 }
