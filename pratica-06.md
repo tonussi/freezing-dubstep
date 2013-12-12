@@ -15,10 +15,10 @@ class Mixfunc a where
 
   x *** y = x * x * y
 
-instance Mixfunc Double where
+instance Mixfunc Double where -- Definido para x double e y double
   x +++ y = 2 * x + y
 
-instance Mixfunc Integer where
+instance Mixfunc Integer where -- Definido para x inteiro e y inteiro
   x +++ y = 10 * x + y
 
 {- Testes Unitários -}
@@ -45,6 +45,28 @@ Prelude> 3 +++ 4 == 10 * 3 + 4 -- True
 - Os métodos das classes em haskekll correspondem às funções virtuais em C++. [1]
 - Haskell não suporta o _overloading_ que C++ suporta. [1]
 - O tipo de um objeto em Haskell não pode ser implicitamente coeso. Pois não existe uma classe base universal como _Object.java_ a qual todas herdam propriedadas. [1]
+
+
+# Classes e Tipos (Exercícios Resolvidos)
+
+```haskell
+increm :: Integer -> Integer
+increm = \x -> x + 1
+
+ppar :: (Enum a, Num a) => a -> a
+ppar n = product [2,4..n]
+
+primeiro :: [t] -> t
+primeiro (x:_) = x
+
+ultimo :: [t] -> t
+ultimo [x] = x
+ultimo (_:xs) = ultimo xs
+
+rotaciona :: [a] -> [a]
+rotaciona [] = error "EmptyListException"
+rotaciona (x:xs) = xs ++ [x]
+```
 
 # Referências
 
