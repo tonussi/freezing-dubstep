@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/bin/zsh
 
 echo "Compilando, espera.."
-gcc -O2 -Wall -ansi sol_triang.c -lm -o soltriang
+gcc -O2 -Wall -ansi -o stret sol_triang.c soluc.c -lm
 echo "Finalizado."
