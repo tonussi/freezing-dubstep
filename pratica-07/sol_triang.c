@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <math.h>
 
-float soluc(float, float);
+float soluc (float, float);
+float radians_degrees (float);
+float degrees_radians (float);
 
 int main()
 {
@@ -13,15 +15,17 @@ int main()
 
   printf("%f\n", a);
 
+  c = 40.0;
+  b = 120.0;
+
+  a = radians_degrees(b);
+
+  printf("%f\n", a);
+
+  a = degrees_radians(c);
+
+  printf("%f\n", a);
+
   exit(0);
-
-}
-
-float soluc(float x, float y)
-{
-
-  float r;
-  r = sqrt(x * x + y * y);
-  return r;
 
 }
