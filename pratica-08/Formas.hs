@@ -1,45 +1,48 @@
 module Formas
 ( Forma
-( areaRetangulo
-, areaElipse
-, areaTriangRet
-, areaPoligono )
-, raio
-, lado
-, vertice
+( Retangulo
+, Elipse
+, TriangRet
+, Poligono )
+, Raio
+, Lado
+, Vertice
 , quadrado
 , circulo
-, distentre
+, distEntre
 , area
 ) where
 
-data Forma = areaRetangulo lado lado
-	   			 | areaElipse raio raio
-	   			 | areaTriangRet lado lado
-	   			 | areaPoligono [vertice]
-     			 deriving Show
+data Forma
+  = Retangulo Lado Lado
+  | Elipse Raio Raio
+  | TriangRet Lado Lado
+  | Poligono [Vertice]
 
-type raio = Float
-type lado = Float
-type vertice = (Float, Float)
+type Raio = Float
+type Lado = Float
+type Vertice = (Float, Float)
 
-quadrado s = areaRetangulo s s
-circulo r = areaElipse r r
+quadrado :: Lado -> Forma
+quadrado s = Retangulo s s
 
-triArea :: vertice -> vertice -> vertice -> Float
-triArea v1 v2 v3 = let a = distentre v1 v2
-		                   b = distentre v1 v2
-		                   c = distentre v1 v2
-		                   s = distentre v1 v2
-		    in sqrt (s * (s - a) * (s - b) * (s - c))
+circulo :: Raio -> Forma
+circulo r = Elipse r r
 
-distentre :: vertice -> vertice -> Float
-distentre (x1, y1) (x2, y2) = sqrt ((x1 - x2) ^ 2 + (y1 - y2) ^ 2)
+triArea :: Floating a => (a, a) -> (a, a) -> (a, a) -> a
+triArea v1 v2 v3 = let a = distEntre v1 v2
+                       b = distEntre v2 v3
+                       c = distEntre v3 v1
+                       s = 0.5 * (a + b + c)
+                   in sqrt (s * ( s - a ) * ( s - b ) * ( s - c ))
 
-area :: Forma -> Float
-area (areaRetangulo s1 s2)  = s1 * s2
-area (areaTriangRet s1 s2)  = s1 * s2 / 2
-area (areaElipse r1 r2)     = pi * r1 * r2
-area (areaPoligono (v1:vs)) = poliArea vs where poliArea :: [vertice] -> Float
-			      poliArea (v2:v3:vs') = triArea v1 v2 v3 + poliArea (v3:vs')
-			      poliArea _ = 0
+distEntre :: Floating a => (a, a) -> (a, a) -> a
+distEntre (x1, y1) (x2, y2) = sqrt ((x1 - x2) ^ 2 + (y1 - y2) ^ 2)
+
+area :: Forma -> Lado
+area (Retangulo s1 s2)          = s1 * s2
+area (TriangRet s1 s2)          = s1 * s2 / 2
+area (Elipse r1 r2)             = pi * r1 * r2
+area (Poligono (v1:vs))         = poliArea vs where poliArea :: [Vertice] -> Float
+                                                    poliArea (v2:v3:vs') = (triArea v1 v2 v3) + poliArea (v3:vs')
+                                                    poliArea _           = 0
