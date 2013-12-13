@@ -1,8 +1,6 @@
-# Makefile Tonussi
-
 CC=gcc
 CFLAGS=-O2 -Wall -ansi -lm -I.
-DEPS = sol_triang.h
+DEPS = local.h
 OBJ = sol_triang.o soluc.o
 PROGS = sol_triang
 
