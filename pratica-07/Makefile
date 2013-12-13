@@ -13,4 +13,4 @@ sol_triang: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
 
 clean:
-	rm -f *~ *.core *.o *.dat $(PROGS)
+	rm $(PROGS) *.o
