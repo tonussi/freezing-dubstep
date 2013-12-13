@@ -2,7 +2,19 @@ __Lab__: Prática 8
 
 __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
-[TOC]
+
+<div class="toc">
+<ul>
+<li><a href="#formashs">Formas.hs</a><ul>
+<li><a href="#testes-de-formashs">Testes de Formas.hs</a></li>
+<li><a href="#rodando-alguns-testes-unitarios-para-formashs">Rodando alguns testes unitários para Formas.hs</a></li>
+</ul>
+</li>
+<li><a href="#funcoes-trigonometricas-hiperbolicas">Funções Trigonométricas Hiperbólicas</a></li>
+<li><a href="#series">Séries</a></li>
+<li><a href="#referencias">Referências</a></li>
+</ul>
+</div>
 
 
 # Formas.hs
@@ -185,7 +197,48 @@ Para podermos comparar.
 
 # Séries
 
+Apostei no método de Castellanos (1986, 1988) mas infelizmente eu não consegui implementa-lo corretamente. Para testar `ghci /pratica-08/Series.hs` e lançar `unittest`. Mas eu acredito por intuição que esse método
+é suficiente se usar fibonacci iterativo.
 
+```haskell
+-- Haskell :: UnitTest
+-- Test Fibonacci O(n) Recursivo
+0
+1
+5
+55
+75025
+832040
+
+-- Test Fibonacci O(1) Iterativo
+0.0
+1.0
+5.0
+55.0
+75025.0
+832039.9999999999
+
+-- Test Parcelas Arctan
+
+0.0
+-5.69401310833123e-2
+1.0493901531919196e-2
+-3.549646119343373e-3
+9.049450414004474e-4
+
+-- Test Parcelas Arctan (1)
+-- Should be next to Haskell built-in pi
+-- Should be next to Haskell built-in 4 * atan 1
+
+0.0
+-5.69401310833123e-2
+-4.64462295513931e-2
+-4.9995875670736475e-2
+-4.9090930629336026e-2
+Test Parcelas Arctan (2)
+-4.929458907599922e-2
+-4.929471224819077e-2
+```
 
 # Referências
 
