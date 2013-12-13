@@ -1,10 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-
-float soluc (float, float);
-float radians_degrees (float);
-float degrees_radians (float);
+#include "local.h"
 
 int main()
 {
