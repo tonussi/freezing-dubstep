@@ -38,7 +38,7 @@ triArea v1 v2 v3 = let a = distEntre v1 v2
                    in sqrt (s * ( s - a ) * ( s - b ) * ( s - c ))
 
 distEntre :: Floating a => (a, a) -> (a, a) -> a
-distEntre (x1, y1) (x2, y2) = sqrt ((x1 - x2) ^ 2 + (y1 - y2) ^ 2)
+distEntre (x1, y1) (x2, y2) = sqrt (((x1 - x2) ** 2) + ((y1 - y2) ** 2))
 
 area :: Forma -> Lado
 area (Retangulo s1 s2)          = s1 * s2
@@ -75,14 +75,14 @@ unittest = do
                           (16.60 , 13.30) ,
                           (13.10 , 12.16) ,
                           (18.60 , 95.10) ,
-                          (10.20 , 13.86)]))
+                          (10.20 , 13.86)]) == 129.56636)
 
   print (area (Poligono [ (41.90 , 11.35) ,
                           (13.12 , 12.10) ,
                           (12.00 , 17.12) ,
                           (18.60 , 95.10) ,
                           (12.90 , 58.60) ,
-                          (41.90 , 11.35)]))
+                          (41.90 , 11.35)]) == 1920.5723)
 
   print (area (Poligono [ (18.60 , 75.30) ,
                           (16.23 , 88.50) ,
@@ -90,16 +90,15 @@ unittest = do
                           (13.20 , 12.28) ,
                           (86.70 , 17.40) ,
                           (13.10 , 50.40) ,
-                          (18.60 , 75.30)]))
+                          (18.60 , 75.30)]) == 3645.7407)
 
   putStrLn "Test DistEntre"
   {- testa da distancia entre dois pontos
   -}
-  print (distEntre ( 12.18, 76.40 ) ( 18.00 , 3.0 ) == sqrt ( (12.18-18.00)^2 + (76.40-3.0)^2 ) )
+  print (distEntre (12, 76) (18, 3) == sqrt ((12-18) ** 2 + (76-3) ** 2))
 
 
   putStrLn "Test TriArea"
   {- testa da area triangulo
   -}
-  print (triArea (10.20 , 13.86) (16.60 , 13.3) (13.1 , 12.16))
-
+  print (triArea (10.20 , 13.86) (16.60 , 13.3) (13.1 , 12.16) == 4.627999999999997)
