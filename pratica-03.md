@@ -80,5 +80,4 @@ let hobbit = [ x | x <- [1..4], y <- [x..5], (x+y) `mod` 2 == 0 ] -- [1,1,1,2,2,
 
 Prelude> :t hobbit
 hobbit :: [Integer]
-
 ```
