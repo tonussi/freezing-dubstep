@@ -34,22 +34,22 @@ As linguagens de programação são formadas por:
 + Estruturas Semãnticas
 + `(Semântica) <- [Análise Léxica] -> (Sintaxe)`
 
-```
+```ruby
 Lexema--->(Tokenizador)--->(Tokens)++
-	      \                     |
-	       \                    |
-		+--->(Lexer)+       (Analisador)
-			     \      |
-			      \     |
-			       +--->(Sintaxe)+
-					     |
-					     (Parser)
-					     |
-					     (Semântica Conotativa)
-					     |
-					     (Compilador)
-					     |
-					     +--->(Semântica Denotativa)
+      \                             |
+       \                            |
+        +--->(Lexer)+               (Analisador)
+         \                          |
+          \                         |
+           +-------------->(Sintaxe)+
+                                    |
+                                    (Parser)
+                                    |
+                                    (Semantica Conotativa)
+                                    |
+                                    (Compilador)
+                                    |
+                                    +--->(Semantica Denotativa)
 ```
 
 # Os Arquivos gram, scan & y
