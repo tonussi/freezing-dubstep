@@ -2,7 +2,12 @@ __Lab__: Prática 10
 
 __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
-[TOC]
+<div class="toc">
+<ul>
+<li><a href="#mais-listas">Mais Listas</a></li>
+<li><a href="#exercicio-sobre-listas">Exercício sobre Listas</a></li>
+</ul>
+</div>
 
 # Mais Listas
 
