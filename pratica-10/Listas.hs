@@ -14,11 +14,11 @@ fact = foldl (*) 1 . enumFromTo 1
 
 -- a0 = 0
 
-calculaSomaPA n razao = sum (map (\x -> razao + ((x - 1) * razao)) (take n [0..]))
+calculaSomaPA n razao = sum (map (\x -> razao + ((x - 1) * razao)) (take n [1..]))
 
 -- a0 = 0
 
-mapeiaListaPA n razao = map (\x -> razao + ((x - 1) * razao)) (take n [0..])
+mapeiaListaPA n razao = map (\x -> razao + ((x - 1) * razao)) (take n [1..])
 
 -- a0 = 1
 
@@ -40,18 +40,15 @@ unittest = do
 
   putStrLn "Test Mapeamentos Somas Produtos"
 
-  print (mapeiaListaPA 7 7)
-  print (calculaSomaPA 7 7)
-  print (calculaProdPA 7 7)
-
-  print (mapeiaListaPA 4 7)
-  print (calculaSomaPA 4 7)
-  print (calculaProdPA 4 7)
-
-  print (mapeiaListaPA 3 6)
-  print (calculaSomaPA 3 6)
-  print (calculaProdPA 3 6)
-
-  print (mapeiaListaPA 23 12)
-  print (calculaSomaPA 23 12)
-  print (calculaProdPA 23 12)
+  print (mapeiaListaPA 7  7)
+  print (calculaSomaPA 7  7)
+  print (calculaProdPA 7  7)
+  print (mapeiaListaPA 4  7)
+  print (calculaSomaPA 4  7)
+  print (calculaProdPA 4  7)
+  print (mapeiaListaPA 3  6)
+  print (calculaSomaPA 3  6)
+  print (calculaProdPA 3  6)
+  print (mapeiaListaPA 3 12)
+  print (calculaSomaPA 3 12)
+  print (calculaProdPA 3 12)
