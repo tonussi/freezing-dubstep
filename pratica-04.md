@@ -46,10 +46,10 @@ Ok, modules loaded: Main, Comb, Fact.
 
 __Exercício 3__: Modifique o programa exemplo para calcular:
 
-1. $A_s (6, 3)$ (Arranjo simples)
-* $A_r (4, 2)$ (Arranjo com repetição)
-* $P_c (8)$ (Permutação cíclica)
-* $C_r (10, 4)$ (Combinação com repetição)
+1. _A_s (6, 3)_ (Arranjo simples)
+* _A_r (4, 2)_ (Arranjo com repetição)
+* _P_c (8)_ (Permutação cíclica)
+* _C_r (10, 4)_ (Combinação com repetição)
 
 
 ```haskell
