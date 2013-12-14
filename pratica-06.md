@@ -4,14 +4,14 @@ __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
 <div class="toc">
 <ul>
-<li><a href="#implementacao-e-teste-da-classe-mixfunc">Implementação e Teste da Classe MixFunc</a></li>
+<li><a href="#implementacao-e-teste-da-classe-mixfunc">Implementação e Teste da Classe Mixfunc</a></li>
 <li><a href="#comparacao-com-outras-linguagens">Comparação com outras linguagens</a></li>
 <li><a href="#classes-e-tipos-exercicios-resolvidos">Classes e Tipos (Exercícios Resolvidos)</a></li>
 <li><a href="#referencias">Referências</a></li>
 </ul>
 </div>
 
-# Implementação e Teste da Classe MixFunc
+# Implementação e Teste da Classe Mixfunc
 
 Objetivo desse lab 6 é aprender classes em Haskell.
 
