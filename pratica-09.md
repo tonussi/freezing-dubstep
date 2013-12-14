@@ -2,7 +2,12 @@ __Lab__: Prática 9
 
 __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
-[TOC]
+<div class="toc">
+<ul>
+<li><a href="#listas-em-c-array">Listas em C: Array</a></li>
+<li><a href="#matrizes-em-c-array-x-array">Matrizes em C: Array x Array</a></li>
+</ul>
+</div>
 
 O __programa__ matriz.h, matriz.c e main.c estão no diretório
 pratica-09. Juntei tudo __vetores__ com __matrizes__.
