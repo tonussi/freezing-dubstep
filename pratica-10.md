@@ -21,4 +21,36 @@ __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
 # Exercício sobre Listas
 
-Os resultados e programas estão contido em pratica-10.
+Os resultados e programas estão contido em pratica-10. Fica mais
+fácil entender o que está acontecendo nos resultados abaixo se
+olhares o código e os testes unitários feito sobre o código que
+está no diretório pratica-10.
+
+
+```haskell
+-- [1 of 1] Compiling Listas           ( Listas.hs, interpreted )
+-- Ok, modules loaded: Listas.
+-- *Listas> unittest
+
+-- Haskel::MiniTest
+
+-- Test :: Mapeamentos => (calculaSomaPA n razao)
+--         Somas       => (mapeiaListaPA n razao)
+--         Produtos    => (calculaProdPA n razao)
+
+mapeiaListaPA 7  7 -- out => [7, 14, 21, 28, 35, 42, 49]
+calculaSomaPA 7  7 -- out => 196
+calculaProdPA 7  7 -- out => 4150656720
+
+mapeiaListaPA 4  7 -- out => [7, 14, 21, 28]
+calculaSomaPA 4  7 -- out => 70
+calculaProdPA 4  7 -- out => 57624
+
+mapeiaListaPA 3  6 -- out => [6, 12, 18]
+calculaSomaPA 3  6 -- out => 36
+calculaProdPA 3  6 -- out => 1296
+
+mapeiaListaPA 3 12 -- out => [12, 24, 36]
+calculaSomaPA 3 12 -- out => 72
+calculaProdPA 3 12 -- out => 10368
+```
