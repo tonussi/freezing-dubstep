@@ -6,6 +6,7 @@ __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 <ul>
 <li><a href="#mais-listas">Mais Listas</a></li>
 <li><a href="#exercicio-sobre-listas">Exercício sobre Listas</a></li>
+<li><a href="#referencias">Referências</a></li>
 </ul>
 </div>
 
@@ -13,8 +14,8 @@ __Nome__: Lucas Tonussi (CCO-INE-UFSC)
 
 > Apenas um adendo ao que foi visto na aula 11 (sobre listas em haskell):
 
-+ Listas em Haskell são homogêneas.
-+ Listas em Haskell são estruturas noduláres.
++ Listas em Haskell são homogêneas. [<a href="#referencias">1</a>]
++ Listas em Haskell são estruturas noduláres. [<a href="#referencias">1</a>]
 
 ```ruby
 ([77|*->][88|*->][99|*->][4|*->])
@@ -59,3 +60,7 @@ mapeiaListaPA 3 12 -- out => [12, 24, 36]
 calculaSomaPA 3 12 -- out => 72
 calculaProdPA 3 12 -- out => 10368
 ```
+
+# Referências
+
+[1]:  Sá, C. Cesar. Silva, M. Ferreira; _"Haskell Uma Abordagem Prática"_; Disponível: Biblioteca Universitária; Acesso em: 13/12/13;
